@@ -107,6 +107,36 @@ insert into ovg_booking(booking_id, check_in, check_out, trip_id, guest_id) valu
 insert into ovg_booking(booking_id, check_in, check_out, trip_id, guest_id) values (booking_seq.nextval, NULL, NULL, 1, 10);
 insert into ovg_booking(booking_id, check_in, check_out, trip_id, guest_id) values (booking_seq.nextval, to_date('2023-07-17', 'yyyy-mm-dd'), to_date('2023-07-23', 'yyyy-mm-dd'), 2, 2);
 
+create table ovg_step_booking
+(step_booking_id number,
+booking_id number,
+step_id number,
+CONSTRAINT step_booking_pk PRIMARY KEY (step_booking_id),
+CONSTRAINT step_booking_fk FOREIGN KEY (booking_id) REFERENCES ovg_booking(booking_id),
+CONSTRAINT step_booking_fk FOREIGN KEY (step_id) REFERENCES ovg_step(step_id));
 
+create sequence step_booking_seq start with 1 increment by 1;
+
+insert into ovg_step_booking(step_booking_id, booking_id, step_id) values (step_booking_seq.nextval, 1, 1);
+insert into ovg_step_booking(step_booking_id, booking_id, step_id) values (step_booking_seq.nextval, 1, 2);
+insert into ovg_step_booking(step_booking_id, booking_id, step_id) values (step_booking_seq.nextval, 1, 3);
+insert into ovg_step_booking(step_booking_id, booking_id, step_id) values (step_booking_seq.nextval, 2, 1);
+insert into ovg_step_booking(step_booking_id, booking_id, step_id) values (step_booking_seq.nextval, 3, 1);
+insert into ovg_step_booking(step_booking_id, booking_id, step_id) values (step_booking_seq.nextval, 4, 1);
+insert into ovg_step_booking(step_booking_id, booking_id, step_id) values (step_booking_seq.nextval, 4, 2);
+insert into ovg_step_booking(step_booking_id, booking_id, step_id) values (step_booking_seq.nextval, 5, 1);
+insert into ovg_step_booking(step_booking_id, booking_id, step_id) values (step_booking_seq.nextval, 5, 2);
+insert into ovg_step_booking(step_booking_id, booking_id, step_id) values (step_booking_seq.nextval, 5, 3);
+insert into ovg_step_booking(step_booking_id, booking_id, step_id) values (step_booking_seq.nextval, 6, 1);
+insert into ovg_step_booking(step_booking_id, booking_id, step_id) values (step_booking_seq.nextval, 6, 2);
+insert into ovg_step_booking(step_booking_id, booking_id, step_id) values (step_booking_seq.nextval, 6, 3);
+insert into ovg_step_booking(step_booking_id, booking_id, step_id) values (step_booking_seq.nextval, 7, 1);
+insert into ovg_step_booking(step_booking_id, booking_id, step_id) values (step_booking_seq.nextval, 7, 2);
+insert into ovg_step_booking(step_booking_id, booking_id, step_id) values (step_booking_seq.nextval, 8, 1);
+insert into ovg_step_booking(step_booking_id, booking_id, step_id) values (step_booking_seq.nextval, 9, 1);
+insert into ovg_step_booking(step_booking_id, booking_id, step_id) values (step_booking_seq.nextval, 10, 1);
+insert into ovg_step_booking(step_booking_id, booking_id, step_id) values (step_booking_seq.nextval, 11, 5);
+insert into ovg_step_booking(step_booking_id, booking_id, step_id) values (step_booking_seq.nextval, 12, 1);
+insert into ovg_step_booking(step_booking_id, booking_id, step_id) values (step_booking_seq.nextval, 12, 2);
 
 
