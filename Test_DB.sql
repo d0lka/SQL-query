@@ -101,6 +101,18 @@ CONSTRAINT booking_fk FOREIGN KEY (guest_id) REFERENCES ovg_guest(guest_id));
 create sequence booking_seq start with 1 increment by 1;
 
 insert into ovg_booking(booking_id, check_in, check_out, trip_id, guest_id) values (booking_seq.nextval, to_date('2023-07-10', 'yyyy-mm-dd'), to_date('2023-07-16', 'yyyy-mm-dd'), 1, 2);
+insert into ovg_booking(booking_id, check_in, check_out, trip_id, guest_id) values (booking_seq.nextval, to_date('2023-06-05', 'yyyy-mm-dd'), to_date('2023-06-11', 'yyyy-mm-dd'), 9, 1);
+insert into ovg_booking(booking_id, check_in, check_out, trip_id, guest_id) values (booking_seq.nextval, to_date('2023-06-05', 'yyyy-mm-dd'), to_date('2023-06-11', 'yyyy-mm-dd'), 10, 3);
+insert into ovg_booking(booking_id, check_in, check_out, trip_id, guest_id) values (booking_seq.nextval, to_date('2023-08-07', 'yyyy-mm-dd'), to_date('2023-08-13', 'yyyy-mm-dd'), 1, 5);
+insert into ovg_booking(booking_id, check_in, check_out, trip_id, guest_id) values (booking_seq.nextval, to_date('2023-10-23', 'yyyy-mm-dd'), to_date('2023-10-29', 'yyyy-mm-dd'), 3, 5);
+insert into ovg_booking(booking_id, check_in, check_out, trip_id, guest_id) values (booking_seq.nextval, to_date('2023-05-15', 'yyyy-mm-dd'), to_date('2023-05-21', 'yyyy-mm-dd'), 1, 4);
+insert into ovg_booking(booking_id, check_in, check_out, trip_id, guest_id) values (booking_seq.nextval, to_date('2023-11-27', 'yyyy-mm-dd'), to_date('2023-12-10', 'yyyy-mm-dd'), 1, 6);
+insert into ovg_booking(booking_id, check_in, check_out, trip_id, guest_id) values (booking_seq.nextval, NULL, NULL, 4, 7);
+insert into ovg_booking(booking_id, check_in, check_out, trip_id, guest_id) values (booking_seq.nextval, NULL, NULL, 8, 8);
+insert into ovg_booking(booking_id, check_in, check_out, trip_id, guest_id) values (booking_seq.nextval, to_date('2023-05-29', 'yyyy-mm-dd'), to_date('2023-06-04', 'yyyy-mm-dd'), 7, 9);
+insert into ovg_booking(booking_id, check_in, check_out, trip_id, guest_id) values (booking_seq.nextval, NULL, NULL, 1, 10);
+insert into ovg_booking(booking_id, check_in, check_out, trip_id, guest_id) values (booking_seq.nextval, to_date('2023-07-17', 'yyyy-mm-dd'), to_date('2023-07-23', 'yyyy-mm-dd'), 2, 2);
+
 
 
 
