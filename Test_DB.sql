@@ -4,8 +4,8 @@ birth_date date not null,
 guest_name varchar2(100) not null,
 discount_card number,
 CONSTRAINT guest_pk PRIMARY KEY (guest_id),
-CONSTRAINT discount_card_fk FOREIGN KEY (discount_card) REFERENCES ovg_guest(guest_id)
-);
+CONSTRAINT discount_card_fk FOREIGN KEY (discount_card) REFERENCES ovg_guest(guest_id));
+
 create sequence guest_seq start with 1 increment by 1;
 
 insert into ovg_guest(guest_id, birth_date, guest_name, discount_card) values (guest_seq.nextval, to_date('1990-06-01', 'yyyy-mm-dd'), 'Афанасьев Петр Иванович', guest_seq.nextval);
@@ -19,8 +19,6 @@ insert into ovg_guest(guest_id, birth_date, guest_name, discount_card) values (g
 insert into ovg_guest(guest_id, birth_date, guest_name, discount_card) values (guest_seq.nextval, to_date('1987-10-11', 'yyyy-mm-dd'), 'Тимофеева Юлия Владимировна', guest_seq.nextval);
 insert into ovg_guest(guest_id, birth_date, guest_name, discount_card) values (guest_seq.nextval, to_date('1993-12-31', 'yyyy-mm-dd'), 'Тимофеев Антон Александрович', guest_seq.nextval);
 
-
-
 create table ovg_step
 (step_id number,
 step_name varchar2(50) not null,
@@ -33,8 +31,6 @@ insert into ovg_step(step_id, step_name) values (step_seq.nextval, 'Бронир
 insert into ovg_step(step_id, step_name) values (step_seq.nextval, 'Оплата');
 insert into ovg_step(step_id, step_name) values (step_seq.nextval, 'Поездка');
 insert into ovg_step(step_id, step_name) values (step_seq.nextval, 'Отмена');
-
-
 
 create table ovg_tour
 (tour_id number,
@@ -55,7 +51,6 @@ create table ovg_sber_guest
 CONSTRAINT sber_guest_pk PRIMARY KEY (sber_guest_id),
 CONSTRAINT sber_guest_fk FOREIGN KEY (guest_id) REFERENCES ovg_guest(guest_id));
 
-
 create table ovg_sber_guest
 (sber_guest_id number,
  guest_id number unique,
@@ -72,8 +67,7 @@ trip_name varchar2(100) not null,
 price decimal(9, 2),
 tour_id number,
 CONSTRAINT trip_pk PRIMARY KEY (trip_id),
-CONSTRAINT tour_fk FOREIGN KEY (tour_id) REFERENCES ovg_tour(tour_id)
-);
+CONSTRAINT tour_fk FOREIGN KEY (tour_id) REFERENCES ovg_tour(tour_id));
 
 create sequence trip_seq start with 1 increment by 1;
 
