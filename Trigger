@@ -1,0 +1,13 @@
+-- Тригер на добавление дубликата
+CREATE TRIGGER tr1
+ON PEOPLE
+FOR INSERT, update
+AS
+IF 2 = (SELECT COUNT(P.Stud_ID)
+        FROM People P, INSERTED I
+        WHERE P.Stud_FAM like I.Stud_FAM
+        AND P.Stud_IMYA like I.Stud_IMYA)
+        BEGIN
+            ROLLBACK TRAN
+            raiserror ('Студент уже зачислен', 16, 10)
+        END
