@@ -1,3 +1,4 @@
+--Test DB
 create table ovg_guest
 (guest_id number,
 birth_date date not null,
